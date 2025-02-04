@@ -1,4 +1,15 @@
 ## ISTIO Learning
+### Deploy app
+- Deploy app-routable-demo
+- label the namespace
+```
+kubectl label namespace app-routable-demo istio-injection=enabled
+```
+- restart deployments
+```
+kubectl rollout restart deployment -n app-routable-demo echoserver-1-deployment echoserver-2-deployment nginx-zone1 nginx-zone2 nginx-zone3 nginx-zone4 nginx-zone5 siege-deployment
+```
+### Ingress
 - Create a Gateway (namespaced)
 - Create a VirtualService (namespaced)
 
