@@ -11,7 +11,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /app  # Requests that begin with /myservice
+        prefix: /app1  # Requests that begin with /myservice
     route:
     - destination:
         host: zone1   # Name of the Kubernetes service
