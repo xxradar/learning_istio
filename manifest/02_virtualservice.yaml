@@ -17,3 +17,11 @@ spec:
         host: zone1   # Name of the Kubernetes service
         port:
           number: 80
+  - match:
+    - uri:
+        prefix: /app2  # Requests that begin with /myservice
+    route:
+    - destination:
+        host: zone1   # Name of the Kubernetes service
+        port:
+          number: 80
