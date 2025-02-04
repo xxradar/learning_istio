@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: app-route
+  namespace: app-routable-demo
+spec:
+  hosts:
+  - "*"  # This should match the hosts in the Gateway
+  gateways:
+  - my-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /app  # Requests that begin with /myservice
+    route:
+    - destination:
+        host: zone1   # Name of the Kubernetes service
+        port:
+          number: 80
